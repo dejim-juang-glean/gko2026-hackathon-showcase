@@ -1,6 +1,6 @@
 import { auth, signOut } from "../../auth"
 import { getCompletedFolders, DriveFolder } from "../lib/drive"
-import { getWinners, getPlacementStyle } from "@/lib/teams"
+import { getAllTeams, getWinners, getPlacementStyle } from "@/lib/teams"
 import { getHiddenIds, getCustomCards } from "@/lib/cards"
 import { redirect } from "next/navigation"
 import DashboardClient from "./components/DashboardClient"
@@ -29,6 +29,8 @@ export default async function HomePage() {
     getHiddenIds(),
     getCustomCards(),
   ])
+
+  const allTeams = getAllTeams()
 
   const winners = getWinners().map((team) => ({
     team,
@@ -76,6 +78,7 @@ export default async function HomePage() {
         folders={folders}
         winners={winners}
         winnerFolderIds={winnerFolderIds}
+        allTeams={allTeams}
         initialHiddenIds={hiddenIds}
         initialCustomCards={customCards}
         error={error}

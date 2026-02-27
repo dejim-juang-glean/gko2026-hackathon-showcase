@@ -5,17 +5,27 @@
       "teamNumber": 1,
       "projectTitle": "Crawl Wars",
       "description": "",
-      "members": [],
+      "members": ["Prateek Kavadia", "Alex Sushko", "Dylan Kuntz", "Joshua Lenertz"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 1 - Crawl Wars"
+    },
+    {
+      "name": "Bug Busters2",
+      "teamNumber": 2,
+      "projectTitle": "Bug Busters2",
+      "description": "",
+      "members": ["Pranav Devalla", "Jess Eurich", "Thomas Folliard", "Jayesh Jain", "Tanner Cherry"],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 2 - Bug Busters2"
     },
     {
       "name": "Agent Optimus",
       "teamNumber": 3,
       "projectTitle": "Agent Optimus",
       "description": "",
-      "members": [],
+      "members": ["Julia Shub", "Ben Wiley", "Luke Gruenwald", "Alex Gobolos"],
       "placement": 3,
       "award": "3rd Place",
       "driveFolderMatch": "Team 3 - Agent Optimus"
@@ -25,7 +35,7 @@
       "teamNumber": 4,
       "projectTitle": "Deterministic Demoers",
       "description": "",
-      "members": [],
+      "members": ["Jeremy Patoc", "Amy Blossom", "Casey Berger", "Mike Koscak"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 4 - Deterministic Demoers"
@@ -35,7 +45,7 @@
       "teamNumber": 5,
       "projectTitle": "FlexCredit Fanatics",
       "description": "",
-      "members": [],
+      "members": ["Jay Fielding", "Naina Amballa", "Bradley Sones", "Jack VandeMerkt"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 5 - FlexCredit Fanatics"
@@ -45,7 +55,7 @@
       "teamNumber": 6,
       "projectTitle": "Cloud Crusaders",
       "description": "",
-      "members": [],
+      "members": ["Mike Loos", "John Ta", "Jeremiah Jeffery", "Isaiah White", "Jonathan Stickney"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 6 - Cloud Crusaders"
@@ -55,7 +65,7 @@
       "teamNumber": 7,
       "projectTitle": "Glean 007",
       "description": "",
-      "members": [],
+      "members": ["Tristen Witt", "Connor Kunstek", "Vinny (Michael) Thanh", "Jay Li"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 7 - Glean 007"
@@ -65,7 +75,7 @@
       "teamNumber": 8,
       "projectTitle": "Context Corgis",
       "description": "",
-      "members": [],
+      "members": ["Brett Roeder", "Chris Borg", "Sophia Hewitt", "Edward Shanahan"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 8 - Context Corgis"
@@ -75,37 +85,47 @@
       "teamNumber": 9,
       "projectTitle": "Cloud 9",
       "description": "",
-      "members": [],
+      "members": ["Antoine Nguyen", "Ryan Prince", "Robert Davison", "Justin Swadling"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 9 - Cloud 9"
     },
     {
-      "name": "Tomgun Toms",
+      "name": "Topgun Toms",
       "teamNumber": 10,
-      "projectTitle": "Tomgun Toms",
+      "projectTitle": "Topgun Toms",
       "description": "",
-      "members": [],
+      "members": ["Rohit Sharma", "Navish Bahl", "Javier Soria", "Tal Rabbani"],
       "placement": null,
       "award": null,
-      "driveFolderMatch": "Team 10 - Tomgun Toms"
+      "driveFolderMatch": "Team 10 - Topgun Toms"
     },
     {
       "name": "Superadmin Flowcasters",
       "teamNumber": 11,
       "projectTitle": "Superadmin Flowcasters",
       "description": "",
-      "members": [],
+      "members": ["Algis Kasniuinas", "Eugene Wiehahn", "Tom Murphy", "Karlen Rothenbueler", "Katya Alfaro"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 11 - Superadmin Flowcasters"
+    },
+    {
+      "name": "Logic Legends",
+      "teamNumber": 12,
+      "projectTitle": "Logic Legends",
+      "description": "",
+      "members": ["Ryan Dowler", "Josh D'Souza", "Joe Moeller", "Richard Anter", "Louis Amezquita", "David Seeber"],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 12 - Logic Legends"
     },
     {
       "name": "Lucky 13",
       "teamNumber": 13,
       "projectTitle": "Lucky 13",
       "description": "",
-      "members": [],
+      "members": ["Kushal Singh", "Ryan Krueger", "PJ Kelly", "Tanner Chung"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 13 - Lucky 13"
@@ -115,7 +135,7 @@
       "teamNumber": 14,
       "projectTitle": "Demo Genesis",
       "description": "",
-      "members": [],
+      "members": ["Zach Quiring", "TJ Terrell", "Michael Tripoli", "Eric Flecher"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 14 - Demo Genesis"
@@ -125,7 +145,7 @@
       "teamNumber": 15,
       "projectTitle": "Dr. Pilotgood",
       "description": "",
-      "members": [],
+      "members": ["Dipan Patel", "Mihir Bhojani", "Chris Janning", "Max Dumas", "Naga Jayadev"],
       "placement": 1,
       "award": "1st Place",
       "driveFolderMatch": "Team 15 - Dr. Pilotgood"
@@ -135,7 +155,7 @@
       "teamNumber": 16,
       "projectTitle": "Kylie Minogues",
       "description": "",
-      "members": [],
+      "members": ["Takayuki Kaburagi", "Kentaro Fujisaki", "Nathan Catania", "Aarushi Arya"],
       "placement": 2,
       "award": "2nd Place",
       "driveFolderMatch": "Team 16 - Kylie Minogues"
@@ -145,7 +165,7 @@
       "teamNumber": 17,
       "projectTitle": "Glean Quest",
       "description": "",
-      "members": [],
+      "members": ["Melwin Vinod", "Rathil Patel", "Rudy Lim", "Nida Naik"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 17 - Glean Quest"
@@ -155,7 +175,7 @@
       "teamNumber": 18,
       "projectTitle": "Glean Slate",
       "description": "",
-      "members": [],
+      "members": ["Bobby Hyam", "Greg Moore", "Naveen Keshava", "Jeremy Luscombe", "Loic Loewert", "Siawash Shibani"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 18 - Glean Slate"
@@ -165,10 +185,20 @@
       "teamNumber": 19,
       "projectTitle": "Glean 4 Me",
       "description": "",
-      "members": [],
+      "members": ["Alex Mahabir", "Irene Klimoff", "Varun Mavilla", "Jason Wrage"],
       "placement": null,
       "award": null,
       "driveFolderMatch": "Team 19 - Glean 4 Me"
+    },
+    {
+      "name": "Agent Multiverse",
+      "teamNumber": 20,
+      "projectTitle": "Agent Multiverse",
+      "description": "",
+      "members": ["Darshita Mittal", "Prateek Kejriwal", "Tushar Narula", "Sharath Chandra", "Dishant Gupta", "Aaditya Gururaj"],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 20 - Agent Multiverse"
     }
   ]
 }

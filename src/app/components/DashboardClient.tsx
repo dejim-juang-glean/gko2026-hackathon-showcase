@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react"
 import { DriveFile, DriveFolder } from "@/lib/drive-types"
-import { PlacementStyle } from "@/lib/teams"
+import { PlacementStyle, Team } from "@/lib/teams"
 import type { CustomCard } from "@/lib/cards"
 import FileCard from "./FileCard"
 import AddCardModal from "./AddCardModal"
@@ -22,6 +22,7 @@ interface DashboardClientProps {
   folders: DriveFolder[]
   winners: WinnerEntry[]
   winnerFolderIds: string[]
+  allTeams: Team[]
   initialHiddenIds: string[]
   initialCustomCards: CustomCard[]
   error: string | null
@@ -41,6 +42,7 @@ export default function DashboardClient({
   folders,
   winners,
   winnerFolderIds,
+  allTeams,
   initialHiddenIds,
   initialCustomCards,
   error,
@@ -77,6 +79,12 @@ export default function DashboardClient({
   }, [])
 
   const customCardIds = new Set(customCards.map((c) => c.id))
+
+  const folderTeamMap = new Map<string, Team>()
+  for (const folder of folders) {
+    const team = allTeams.find((t) => folder.name.includes(t.driveFolderMatch))
+    if (team) folderTeamMap.set(folder.id, team)
+  }
 
   const winnerFolderIdSet = new Set(winnerFolderIds)
   const remainingFolders = folders.filter((f) => !winnerFolderIdSet.has(f.id))
@@ -119,6 +127,9 @@ export default function DashboardClient({
                       {w.team.award}
                     </span>
                     <p className="text-lg font-semibold text-gray-900">{w.team.name}</p>
+                    {w.team.members.length > 0 && (
+                      <p className="text-xs text-gray-500 mt-1">{w.team.members.join(", ")}</p>
+                    )}
                     {visibleFiles.length > 0 && (
                       <div className="grid grid-cols-2 gap-2 mt-3">
                         {visibleFiles.map((file) => (
@@ -199,6 +210,8 @@ export default function DashboardClient({
               const totalCount = allFiles.length
               const hiddenInFolder = allFiles.filter((f) => hiddenIds.has(f.id)).length
 
+              const team = folderTeamMap.get(folder.id)
+
               return (
                 <section key={folder.id}>
                   <div className="flex items-center gap-3 mb-1">
@@ -210,6 +223,9 @@ export default function DashboardClient({
                       +
                     </button>
                   </div>
+                  {team && team.members.length > 0 && (
+                    <p className="text-xs text-gray-400 mb-1">{team.members.join(", ")}</p>
+                  )}
                   <p className="text-sm text-gray-500 mb-4">
                     {totalCount} {totalCount === 1 ? "file" : "files"}
                     {hiddenInFolder > 0 && !showHidden && (
