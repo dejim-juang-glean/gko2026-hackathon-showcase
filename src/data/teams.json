@@ -1,0 +1,174 @@
+{
+  "teams": [
+    {
+      "name": "Crawl Wars",
+      "teamNumber": 1,
+      "projectTitle": "Crawl Wars",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 1 - Crawl Wars"
+    },
+    {
+      "name": "Agent Optimus",
+      "teamNumber": 3,
+      "projectTitle": "Agent Optimus",
+      "description": "",
+      "members": [],
+      "placement": 3,
+      "award": "3rd Place",
+      "driveFolderMatch": "Team 3 - Agent Optimus"
+    },
+    {
+      "name": "Deterministic Demoers",
+      "teamNumber": 4,
+      "projectTitle": "Deterministic Demoers",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 4 - Deterministic Demoers"
+    },
+    {
+      "name": "FlexCredit Fanatics",
+      "teamNumber": 5,
+      "projectTitle": "FlexCredit Fanatics",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 5 - FlexCredit Fanatics"
+    },
+    {
+      "name": "Cloud Crusaders",
+      "teamNumber": 6,
+      "projectTitle": "Cloud Crusaders",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 6 - Cloud Crusaders"
+    },
+    {
+      "name": "Glean 007",
+      "teamNumber": 7,
+      "projectTitle": "Glean 007",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 7 - Glean 007"
+    },
+    {
+      "name": "Context Corgis",
+      "teamNumber": 8,
+      "projectTitle": "Context Corgis",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 8 - Context Corgis"
+    },
+    {
+      "name": "Cloud 9",
+      "teamNumber": 9,
+      "projectTitle": "Cloud 9",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 9 - Cloud 9"
+    },
+    {
+      "name": "Tomgun Toms",
+      "teamNumber": 10,
+      "projectTitle": "Tomgun Toms",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 10 - Tomgun Toms"
+    },
+    {
+      "name": "Superadmin Flowcasters",
+      "teamNumber": 11,
+      "projectTitle": "Superadmin Flowcasters",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 11 - Superadmin Flowcasters"
+    },
+    {
+      "name": "Lucky 13",
+      "teamNumber": 13,
+      "projectTitle": "Lucky 13",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 13 - Lucky 13"
+    },
+    {
+      "name": "Demo Genesis",
+      "teamNumber": 14,
+      "projectTitle": "Demo Genesis",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 14 - Demo Genesis"
+    },
+    {
+      "name": "Dr. Pilotgood",
+      "teamNumber": 15,
+      "projectTitle": "Dr. Pilotgood",
+      "description": "",
+      "members": [],
+      "placement": 1,
+      "award": "1st Place",
+      "driveFolderMatch": "Team 15 - Dr. Pilotgood"
+    },
+    {
+      "name": "Kylie Minogues",
+      "teamNumber": 16,
+      "projectTitle": "Kylie Minogues",
+      "description": "",
+      "members": [],
+      "placement": 2,
+      "award": "2nd Place",
+      "driveFolderMatch": "Team 16 - Kylie Minogues"
+    },
+    {
+      "name": "Glean Quest",
+      "teamNumber": 17,
+      "projectTitle": "Glean Quest",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 17 - Glean Quest"
+    },
+    {
+      "name": "Glean Slate",
+      "teamNumber": 18,
+      "projectTitle": "Glean Slate",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 18 - Glean Slate"
+    },
+    {
+      "name": "Glean 4 Me",
+      "teamNumber": 19,
+      "projectTitle": "Glean 4 Me",
+      "description": "",
+      "members": [],
+      "placement": null,
+      "award": null,
+      "driveFolderMatch": "Team 19 - Glean 4 Me"
+    }
+  ]
+}

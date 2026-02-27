@@ -1,5 +1,6 @@
 import { auth, signOut } from "../../auth"
 import { getCompletedFolders, DriveFolder } from "../lib/drive"
+import { getWinners, getPlacementStyle } from "@/lib/teams"
 import { redirect } from "next/navigation"
 import FileCard from "./components/FileCard"
 
@@ -23,13 +24,10 @@ export default async function HomePage() {
     console.error("Drive API error:", e)
   }
 
-  const winners = [
-    { place: "1st", label: "1st Place", team: "Dr. Pilotgood", color: "from-yellow-400 to-amber-500", border: "border-yellow-400", badge: "bg-yellow-100 text-yellow-800" },
-    { place: "2nd", label: "2nd Place", team: "Kylie Minogues", color: "from-gray-300 to-slate-400", border: "border-gray-300", badge: "bg-gray-100 text-gray-700" },
-    { place: "3rd", label: "3rd Place", team: "Agent Optimus", color: "from-amber-600 to-orange-700", border: "border-amber-600", badge: "bg-orange-100 text-orange-800" },
-  ].map((w) => ({
-    ...w,
-    folder: folders.find((f) => f.name.includes(w.team)),
+  const winners = getWinners().map((team) => ({
+    team,
+    style: getPlacementStyle(team.placement)!,
+    folder: folders.find((f) => f.name.includes(team.driveFolderMatch)),
   }))
 
   const winnerFolderIds = new Set(winners.map((w) => w.folder?.id).filter(Boolean))
@@ -76,16 +74,16 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {winners.map((w) => (
                 <div
-                  key={w.place}
-                  className={`bg-white rounded-xl border-2 ${w.border} p-6 shadow-sm`}
+                  key={w.team.name}
+                  className={`bg-white rounded-xl border-2 ${w.style.border} p-6 shadow-sm`}
                 >
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${w.color} mx-auto mb-3 flex items-center justify-center`}>
-                    <span className="text-white font-bold text-lg">{w.place.charAt(0)}</span>
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${w.style.color} mx-auto mb-3 flex items-center justify-center`}>
+                    <span className="text-white font-bold text-lg">{w.team.placement}</span>
                   </div>
-                  <span className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full ${w.badge} mb-2`}>
-                    {w.label}
+                  <span className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full ${w.style.badge} mb-2`}>
+                    {w.team.award}
                   </span>
-                  <p className="text-lg font-semibold text-gray-900">{w.team}</p>
+                  <p className="text-lg font-semibold text-gray-900">{w.team.name}</p>
                   {w.folder && w.folder.files.length > 0 && (
                     <div className="grid grid-cols-2 gap-2 mt-3">
                       {w.folder.files.map((file) => (
