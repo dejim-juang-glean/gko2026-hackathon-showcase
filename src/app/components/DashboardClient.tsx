@@ -8,12 +8,7 @@ import FileCard from "./FileCard"
 import AddCardModal from "./AddCardModal"
 
 interface WinnerEntry {
-  team: {
-    name: string
-    placement: number | null
-    award: string | null
-    driveFolderMatch: string
-  }
+  team: Team
   style: PlacementStyle
   folder?: DriveFolder
 }
