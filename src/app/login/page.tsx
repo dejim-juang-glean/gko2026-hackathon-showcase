@@ -17,10 +17,10 @@ export default async function LoginPage() {
             </svg>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            GKO 2026 Showcase
+            GKO 2026 SE Hackathon Showcase
           </h1>
           <p className="text-gray-500">
-            Sign in with your Google account to view the hackathon showcase materials.
+            Sign in with your Google account.
           </p>
         </div>
 
