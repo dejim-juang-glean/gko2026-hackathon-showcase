@@ -2,9 +2,10 @@ import { DriveFile, getMimeTypeLabel } from "../../lib/drive"
 
 interface FileCardProps {
   file: DriveFile
+  compact?: boolean
 }
 
-export default function FileCard({ file }: FileCardProps) {
+export default function FileCard({ file, compact }: FileCardProps) {
   const typeLabel = getMimeTypeLabel(file.mimeType)
   const modifiedDate = file.modifiedTime
     ? new Date(file.modifiedTime).toLocaleDateString("en-US", {
@@ -23,6 +24,41 @@ export default function FileCard({ file }: FileCardProps) {
   }
 
   const isFolder = file.mimeType === "application/vnd.google-apps.folder"
+
+  if (compact) {
+    return (
+      <a
+        href={file.webViewLink ?? "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:shadow-sm hover:border-blue-300 transition-all duration-200 group"
+      >
+        <div className="h-20 bg-gray-100 flex items-center justify-center overflow-hidden">
+          {file.thumbnailLink ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={file.thumbnailLink} alt={file.name} className="w-full h-full object-cover" />
+          ) : file.iconLink ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={file.iconLink} alt="" className="w-6 h-6" />
+          ) : (
+            <svg className="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                d={isFolder
+                  ? "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                  : "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                }
+              />
+            </svg>
+          )}
+        </div>
+        <div className="px-2 py-1.5">
+          <p className="text-xs font-medium text-gray-700 truncate group-hover:text-blue-700" title={file.name}>
+            {file.name}
+          </p>
+        </div>
+      </a>
+    )
+  }
 
   return (
     <a

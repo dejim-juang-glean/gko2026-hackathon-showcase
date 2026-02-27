@@ -23,6 +23,18 @@ export default async function HomePage() {
     console.error("Drive API error:", e)
   }
 
+  const winners = [
+    { place: "1st", label: "1st Place", team: "Dr. Pilotgood", color: "from-yellow-400 to-amber-500", border: "border-yellow-400", badge: "bg-yellow-100 text-yellow-800" },
+    { place: "2nd", label: "2nd Place", team: "Kylie Minogues", color: "from-gray-300 to-slate-400", border: "border-gray-300", badge: "bg-gray-100 text-gray-700" },
+    { place: "3rd", label: "3rd Place", team: "Agent Optimus", color: "from-amber-600 to-orange-700", border: "border-amber-600", badge: "bg-orange-100 text-orange-800" },
+  ].map((w) => ({
+    ...w,
+    folder: folders.find((f) => f.name.includes(w.team)),
+  }))
+
+  const winnerFolderIds = new Set(winners.map((w) => w.folder?.id).filter(Boolean))
+  const remainingFolders = folders.filter((f) => !winnerFolderIds.has(f.id))
+
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -55,6 +67,39 @@ export default async function HomePage() {
         </div>
       </header>
 
+      {/* Winners */}
+      {!error && folders.length > 0 && (
+        <div className="bg-gradient-to-b from-indigo-50 to-gray-50 border-b border-gray-200 px-6 py-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Hackathon Winners</h2>
+            <p className="text-sm text-gray-500 mb-8">Congratulations to our top teams!</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {winners.map((w) => (
+                <div
+                  key={w.place}
+                  className={`bg-white rounded-xl border-2 ${w.border} p-6 shadow-sm`}
+                >
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${w.color} mx-auto mb-3 flex items-center justify-center`}>
+                    <span className="text-white font-bold text-lg">{w.place.charAt(0)}</span>
+                  </div>
+                  <span className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full ${w.badge} mb-2`}>
+                    {w.label}
+                  </span>
+                  <p className="text-lg font-semibold text-gray-900">{w.team}</p>
+                  {w.folder && w.folder.files.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2 mt-3">
+                      {w.folder.files.map((file) => (
+                        <FileCard key={file.id} file={file} compact />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         {error ? (
@@ -62,7 +107,7 @@ export default async function HomePage() {
             <p className="font-medium">Error loading files</p>
             <p className="text-sm mt-1">{error}</p>
           </div>
-        ) : folders.length === 0 ? (
+        ) : remainingFolders.length === 0 ? (
           <div className="text-center mt-20">
             <svg className="w-12 h-12 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
@@ -71,7 +116,7 @@ export default async function HomePage() {
           </div>
         ) : (
           <div className="space-y-10">
-            {folders.map((folder) => (
+            {remainingFolders.map((folder) => (
               <section key={folder.id}>
                 <h2 className="text-lg font-semibold text-gray-900 mb-1">{folder.name}</h2>
                 <p className="text-sm text-gray-500 mb-4">
