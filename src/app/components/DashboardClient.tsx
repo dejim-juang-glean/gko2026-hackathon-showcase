@@ -103,10 +103,23 @@ export default function DashboardClient({
       {/* Winners */}
       {!error && folders.length > 0 && (
         <div className="bg-gradient-to-b from-indigo-50 to-gray-50 border-b border-gray-200 px-6 py-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Glean SE Hackathon Winners</h2>
             <p className="text-sm text-gray-500 mb-8">Congratulations!</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* YouTube Video Box */}
+              <div className="bg-white rounded-xl border-2 border-gray-200 p-4 shadow-sm flex flex-col">
+                <p className="text-sm font-semibold text-gray-700 mb-3">Hackathon Highlight Reel</p>
+                <div className="relative w-full flex-1" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/zoFvROVueZI"
+                    title="Hackathon Highlight Reel"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
               {winners.map((w) => {
                 const allFiles = w.folder ? getFilesForFolder(w.folder) : []
                 const visibleFiles = filterFiles(allFiles)
