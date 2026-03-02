@@ -11,10 +11,13 @@ export default async function LoginPage() {
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
       <div className="bg-white rounded-2xl shadow-lg p-10 max-w-md w-full mx-4 text-center">
         <div className="mb-8">
-          <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-            </svg>
+          <div className="flex items-center justify-center mx-auto mb-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://cdn.prod.website-files.com/6127a84dfe068e153ef20572/66ded1bc82df72f2e1d56eb7_Glean%20Logomark%20Blue.svg"
+              alt="Glean logo"
+              className="w-108 h-108"
+            />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             GKO 2026 SE Hackathon Showcase

@@ -104,8 +104,8 @@ export default function DashboardClient({
       {!error && folders.length > 0 && (
         <div className="bg-gradient-to-b from-indigo-50 to-gray-50 border-b border-gray-200 px-6 py-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Hackathon Winners</h2>
-            <p className="text-sm text-gray-500 mb-8">Congratulations to our top teams!</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Glean SE Hackathon Winners</h2>
+            <p className="text-sm text-gray-500 mb-8">Congratulations!</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {winners.map((w) => {
                 const allFiles = w.folder ? getFilesForFolder(w.folder) : []
@@ -157,35 +157,7 @@ export default function DashboardClient({
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Toggle + stats bar */}
-        {!error && folders.length > 0 && (
-          <div className="flex items-center gap-4 mb-6">
-            <button
-              onClick={() => setShowHidden(!showHidden)}
-              className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border transition ${
-                showHidden
-                  ? "bg-blue-50 border-blue-300 text-blue-700"
-                  : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
-              }`}
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {showHidden ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
-                )}
-              </svg>
-              {showHidden ? "Showing hidden" : "Show hidden"}
-              {hiddenCount > 0 && (
-                <span className="bg-gray-200 text-gray-600 text-xs font-medium px-1.5 py-0.5 rounded-full">
-                  {hiddenCount}
-                </span>
-              )}
-            </button>
-          </div>
-        )}
-
-        {error ? (
+          {error ? (
           <div className="rounded-lg bg-red-50 border border-red-200 p-4 text-red-800">
             <p className="font-medium">Error loading files</p>
             <p className="text-sm mt-1">{error}</p>
@@ -208,10 +180,11 @@ export default function DashboardClient({
               const team = folderTeamMap.get(folder.id)
 
               return (
-                <section key={folder.id}>
+                <section key={folder.id} className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
                   <div className="flex items-center gap-3 mb-1">
                     <h2 className="text-lg font-semibold text-gray-900">{folder.name}</h2>
                     <button
+                      type="button"
                       onClick={() => setModalFolderId(folder.id)}
                       className="w-6 h-6 flex items-center justify-center text-gray-400 border border-dashed border-gray-300 rounded hover:border-blue-400 hover:text-blue-500 transition text-sm"
                     >
@@ -248,6 +221,34 @@ export default function DashboardClient({
           </div>
         )}
       </div>
+
+      {/* Show hidden toggle */}
+      {!error && folders.length > 0 && (
+        <div className="flex justify-center py-8">
+          <button
+            onClick={() => setShowHidden(!showHidden)}
+            className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border transition ${
+              showHidden
+                ? "bg-blue-50 border-blue-300 text-blue-700"
+                : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {showHidden ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+              )}
+            </svg>
+            {showHidden ? "Showing hidden" : "Show hidden"}
+            {hiddenCount > 0 && (
+              <span className="bg-gray-200 text-gray-600 text-xs font-medium px-1.5 py-0.5 rounded-full">
+                {hiddenCount}
+              </span>
+            )}
+          </button>
+        </div>
+      )}
 
       {/* Modal */}
       {modalFolderId && (
